@@ -1,0 +1,33 @@
+[{
+        "id": "1",
+        "director_name": "Wes craven",
+        "nationality": "American",
+        "birth_year": 1939,
+        "fields": "Director, writer",
+        "movies": [{
+                "movie_id": 1,
+                "title": "A Nightmare on Elm Street"
+            },
+            {
+                "movie_id": 2,
+                "title": "Scream"
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "director_name": "David F. Sandberg",
+        "nationality": "American",
+        "birth_year": 1981,
+        "fields": "Director, youtuber",
+        "movies": [{
+                "movie_id": 3,
+                "title": "Lights Out"
+            },
+            {
+                "movie_id": 4,
+                "title": "Annabelle: Creation"
+            }
+        ]
+    }
+]

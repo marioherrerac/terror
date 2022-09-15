@@ -1,0 +1,49 @@
+[{
+        "id": "1",
+        "title": "A Nightmare on Elm Street",
+        "country": "United States",
+        "year": 1984,
+        "language": "ENGLISH",
+        "duration": 91,
+        "director": "Wes Craven",
+        "director_id": 1,
+        "producer": "New Line Cinema",
+        "producer_id": 1
+    },
+    {
+        "id": "2",
+        "title": "Scream",
+        "country": "United States",
+        "year": 1996,
+        "language": "ENGLISH",
+        "duration": 111,
+        "director": "Wes Craven",
+        "director_id": 1,
+        "producer": "Woods Entertainment",
+        "producer_id": 2
+    },
+    {
+        "id": "3",
+        "title": "Lights Out",
+        "country": "United States",
+        "year": 2016,
+        "language": "ENGLISH",
+        "duration": 81,
+        "director": "David F. Sandberg",
+        "director_id": 2,
+        "producer": "New Line Cinema",
+        "producer_id": 1
+    },
+    {
+        "id": "4",
+        "title": "Annabelle: Creation",
+        "country": "United States",
+        "year": 2017,
+        "language": "ENGLISH",
+        "duration": 110,
+        "director": "David F. Sandberg",
+        "director_id": 2,
+        "producer": "New Line Cinema",
+        "producer_id": 1
+    }
+]
