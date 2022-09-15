@@ -16,6 +16,7 @@
       v-bind:movies="movies">
     </router-view>
   </div>
+ 
 </template>
 <script>
 export default {

@@ -6,38 +6,38 @@
               <form>
               <div class="row">
                <div class="six columns">
-                <label for="titleInput">Title</label>
+                <label for="titleInput">Name</label>
                 <input class="u-full-width" type="text"
-                  v-model="movie.title">
+                  v-model="producer.producer_name">
                </div>
                <div class="six columns">
                 <label for="editionInput">Country</label>
                 <input class="u-full-width" type="text"
-                   v-model="movie.country">
+                   v-model="producer.country">
                </div>
                <div class="six columns">
-                <label for="copyrightInput">Year</label>
+                <label for="copyrightInput">Founded</label>
                 <input class="u-full-width" type="text"
-                   v-model="movie.year">
+                   v-model="producer.founded">
                </div>
               </div>
               <div class="row">
                <div class="six columns">
-                <label for="emailInput">Director</label>
+                <label for="emailInput">Genere</label>
                 <input class="u-full-width" type="email"
-                   v-model="movie.director">
+                   v-model="producer.genere">
                </div>
                <div class="six columns">
-                <label for="phoneInput">Producer</label>
+                <label for="phoneInput">Movies</label>
                 <input class="u-full-width" type="tel"
-                  v-model="movie.producer">
+                  v-model="producer.movies.title">
                </div>
                <router-link class="button button-primary" 
-                 to="/movie">Back</router-link>
+                 to="/director">Back</router-link>
                <a v-if='edit' class="button button-primary" style="float: right"
-                  v-on:click="updateMovie()">Update</a>
+                  v-on:click="updateProducer()">Update</a>
                <a v-if='create' class="button button-primary" style="float: right"
-                  v-on:click="createMovie()">Create</a>
+                  v-on:click="createProducer()">Create</a>
               </div>
              </form>
             </div>
@@ -48,43 +48,43 @@
            props: ['create','edit','show'],
            data: function() {
              return {
-               title: "Movie Data",
-               prof: {'title':'','country':'','year':'','language':'','duration':'','director':"",'producer':''},
+               title: "Producer Data",
+               prof: {'producer_name':'','country':'','founded':'','genere':'','title':''},
              }
            },
            created () {
-            this.findMovie(app.$route.params.id)
+            this.findProducer(app.$route.params.id)
            },
            methods: {
-             findMovie: function(id) {
-               var movie = app.movies.find(
+             findProducer: function(id) {
+               var producer = app.producers.find(
                  function(x) { return x.id == id; });
-               if (movie!=null)
-                 Object.assign(this.movie,movie);
+               if (producer!=null)
+                 Object.assign(this.producer,producer);
              },
-             updateMovie: function() {
+             updateProducer: function() {
                this.prof['_method'] = 'PUT';
                var id = app.$route.params.id;
-               fetch('/server/movie/'+id,
+               fetch('/server/producer/'+id,
                  { headers: {'Content-Type':'application/json'},
                    method: 'POST',
-                   body: JSON.stringify(this.movie)})
+                   body: JSON.stringify(this.producer)})
                  .then((data) => {
-                   var index = app.movies.findIndex(
+                   var index = app.producers.findIndex(
                       function(x) { return x.id == id; });
-                   app.movies[index] = this.movie;
-                   router.push('/movie');
+                   app.producers[index] = this.producer;
+                   router.push('/producer');
                  }
                )
              },
-             createMovie: function() {
-               fetch('/server/movie',
+             createProducer: function() {
+               fetch('/server/producer',
                  { headers: {'Content-Type':'application/json'},
                    method: 'POST',
-                   body: JSON.stringify(this.movie)})
+                   body: JSON.stringify(this.producer)})
                  .then((data) => {
-                    app.movies.push(this.book);
-                    router.push('/movie');
+                    app.producers.push(this.producer);
+                    router.push('/producer');
                  }
                )
              }
